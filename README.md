@@ -1,7 +1,7 @@
 makebook
 ========
 
-An application for making single book from all chapters of an audio books in http://etc.usf.edu/lit2go
+An application for making single book from all chapters of an audio book in http://etc.usf.edu/lit2go
 What is the operation of this application is described below.
 
 Problem?
