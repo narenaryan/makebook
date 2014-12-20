@@ -20,7 +20,7 @@ def createbook(url):
 						break
 					handle.write(block)
 
-	print 'Successfully downloaded all books into single folder'
+	print '"%s" is successfully downloaded.....'%folder
 
 
 res = requests.get('http://etc.usf.edu/lit2go/books/')
