@@ -25,4 +25,21 @@ def createbook(url):
 	print 'Successfully downloaded all books into single folder'
 
 
-createbook('http://etc.usf.edu/lit2go/165/buttercup-gold-and-other-stories/')
+res = requests.get('http://etc.usf.edu/lit2go/books/')
+tree = html.fromstring(res.text)
+books = [i.encode('utf-8') for i in tree.xpath('//figcaption[@class="title"]/a/text()')]
+links = tree.xpath('//figcaption[@class="title"]/a/@href')
+
+catalog = dict(zip(books,links))
+numcatalog = enumerate(books,1)
+chose = {}
+print '\n@@@@@@@@@@ Select from the top audio books below @@@@@@@@@\n'
+
+for i,j in numcatalog:
+	print '%d) %s'%(i,j)
+	chose[i] = catalog[j]
+
+choice = int(raw_input('Select Book'))
+
+print 'Your book started downloading.......'
+createbook(chose[choice])
