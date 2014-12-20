@@ -1,7 +1,5 @@
-import requests
+import requests,os
 from lxml import html
-import webbrowser
-import os
 
 def createbook(url):
 	res = requests.get(url)
